@@ -1,0 +1,13 @@
+# DANH MỤC WORK ITEM (WORK ITEM CATALOG) F&B SMART V5.1
+
+Danh mục các công việc (Work Items) chuẩn hóa từ tài liệu `10_WORK_ITEM_CONTRACT.md`:
+
+| Work Item ID | Tên Work Item | Phase | Feature liên quan | Dependency | Scope chính | Trạng thái | Nguồn |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **WI-AUTH-01** | Xây dựng phân hệ Xác thực | Phase 1 | FEAT-AUTH-01 | None | Đăng nhập Firebase Auth, phân quyền | CONFIRMED | `10_WORK_ITEM_CONTRACT` |
+| **WI-SETUP-01** | Xây dựng Quick Setup & Menu Template | Phase 2 | FEAT-SETUP-01, FEAT-MENU-01 | WI-AUTH-01 | Khởi tạo cửa hàng, chọn mô hình kinh doanh, clone menu | CONFIRMED | `QUICK_SETUP_DISCOVERY` |
+| **WI-POS-01** | Xây dựng màn hình POS Bán hàng | Phase 3 | FEAT-POS-01, FEAT-TABLE-01 | WI-SETUP-01 | Giao diện chọn bàn, gọi món, giỏ hàng | CONFIRMED | `POS_ORDERING_DISCOVERY` |
+| **WI-KDS-01** | Xây dựng màn hình Nhà bếp KDS | Phase 4 | FEAT-KDS-01 | WI-POS-01 | Hiển thị và cập nhật trạng thái chế biến món ăn | CONFIRMED | `KDS_KITCHEN_DISCOVERY` |
+| **WI-PAY-01** | Xây dựng tính năng Thanh toán & Checkout | Phase 4 | FEAT-PAY-01 | WI-POS-01 | Xử lý thanh toán, in hóa đơn, đóng bàn | CONFIRMED | `CHECKOUT_PAYMENT_DISCOVERY` |
+| **WI-SHIFT-01** | Xây dựng quản lý Ca làm việc | Phase 5 | FEAT-SHIFT-01 | WI-AUTH-01 | Mở/đóng ca, kiểm đếm tiền mặt | CONFIRMED | `SHIFT_MANAGEMENT_DISCOVERY` |
+| **WI-CUST-01** | Xây dựng Quản lý Khách hàng & Công nợ | Phase 5 | FEAT-CUST-01, FEAT-LOYAL-01 | WI-POS-01 | Quản lý thông tin khách hàng, công nợ, tích điểm (GAP-LOYAL-01) | PARTIAL | `CUSTOMER_LOYALTY_DISCOVERY` |
