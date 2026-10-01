@@ -1,36 +1,33 @@
-===== BEGIN FNB SMART MONITORING & CLOSE-OUT REPORT — WI-LOYALTY-02 / PROMPT-207 =====
+===== BEGIN FNB SMART MONITORING & CLOSE-OUT REPORT — WI-LOYALTY-02 / PROMPT-208 =====
 
 WORK ITEM:
 WI-LOYALTY-02 (Flexible Store Loyalty, Redemption Campaigns & Member Tiers)
 
-PROMPTS EXECUTED:
-- PROMPT-199: Loyalty Lite Core.
-- PROMPT-200: Firestore Rules & Customer Search.
-- PROMPT-201 & PROMPT-202: Android Contact Picker integration & crash fix.
-- PROMPT-203: Removal of Contact Picker.
-- PROMPT-204 & PROMPT-205: Redemption Campaigns & Member Tiers.
-- PROMPT-206: Firestore Rules Deployment for campaigns & tiers.
-- PROMPT-207: UX Clarity & User Guidance (`📖 HƯỚNG DẪN SỬ DỤNG` popup dialog on `LoyaltySettingsView` with plain-language business explanations).
+PROMPT / TASK:
+- PROMPT-208: Multi-Program Loyalty Engine (Program 1: Earn & Gifts, Program 2: Earn & Tier Discounts, Program 3: Earn, Tiers & Gifts), Active Program switching with confirmation warning, program-scoped independent point ledgers, and automatic tier evaluation rules.
 
 PO DECISION:
 PENDING PO TEST (Chờ Chủ quán Tuấn trực tiếp kiểm tra thực tế trên M51 & Note 8).
 
 STATUS:
 * IMPLEMENTED: YES
-* TESTED: YES (34/34 unit tests passed)
+* TESTED: YES (39/39 unit tests passed)
 * ANALYZED: YES (0 issues found)
-* BUILT: YES (Debug APK SHA256: `F3C72E27EC417E80E902E3F16F720107A6CAD6FCE677AF545EB1C11E29A1ED50`, Time: 10/1/2026 3:27:06 PM)
+* BUILT: YES (Debug APK SHA256: `72C686C339343DFBA3A582C5F039153541605E27A97877CE8C037DB08FDE2397`, Time: 10/1/2026 8:37:06 PM)
 * DEPLOYED: YES (Samsung Galaxy M51 `RF8NC11QQVM` & Note 8 `988e50385a3931435330`)
-* COMMITTED & PUSHED: YES (Commit `2783034` to `origin main`)
+* COMMITTED & PUSHED: YES (Commit `9fd8f65` to `origin main`)
 
-SUMMARY OF PROMPT-207 WORK COMPLETED:
-1. **UX Guidance (`LoyaltySettingsView`):** Bổ sung nút "📖 HƯỚNG DẪN SỬ DỤNG" trên AppBar của màn hình Cài đặt Khách hàng thân thiết.
-2. **Plain-Language Help Dialog:** Popup hướng dẫn chi tiết dành cho Chủ quán bằng ngôn ngữ kinh doanh đơn giản (giới thiệu ý nghĩa Loyalty, bật/tắt tích điểm, cài đặt tỷ lệ tiền/điểm kèm ví dụ quán cà phê, chiến dịch đổi điểm, hạng thành viên và các bước cài đặt nhanh).
+SUMMARY OF PROMPT-208 WORK COMPLETED:
+1. **Multi-Program Architecture (3 Programs):** Cấu hình linh hoạt cả 3 chương trình (Chương trình 1: Đổi quà; Chương trình 2: Thăng hạng giảm giá; Chương trình 3: Thăng hạng giảm giá + Đổi quà) cùng lúc trên giao diện `LoyaltySettingsView`.
+2. **Active Program Execution:** Chỉ một chương trình duy nhất được kích hoạt (`● ĐANG KÍCH HOẠT`) và tác động lên các giao dịch mới. Có hộp thoại xác nhận cảnh báo bảo toàn điểm cũ và không quy đổi điểm khi chuyển chương trình.
+3. **Independent Program Point Ledgers:** Điểm của từng chương trình được lưu trữ hoàn toàn độc lập (`programPoints[programId]`), không quy đổi hay dùng chung giữa các chương trình.
+4. **Tier Milestone & Invoice Discount Rule:** Hóa đơn đạt mốc hạng mới chỉ dùng để xác định/cập nhật hạng mới của khách hàng; ưu đãi giảm giá theo hạng mới sẽ bắt đầu áp dụng từ hóa đơn tiếp theo.
+5. **User Guidance:** Tích hợp nút `📖 HƯỚNG DẪN SỬ DỤNG` với popup giải thích chi tiết các câu hỏi thường gặp của Chủ quán.
 
 EVIDENCE:
-- Unit Tests: 34/34 passed (`flutter test`).
+- Unit Tests: 39/39 passed (`flutter test`).
 - Static Analysis: 0 issues (`flutter analyze`).
-- Git Commit: `2783034` (Pushed to GitHub `fnb-smart-v5` main).
+- Git Commit: `9fd8f65` (Pushed to GitHub `fnb-smart-v5` main).
 
 NEXT ACTION:
 - Chờ PO Tuấn thực hiện PO Test.
