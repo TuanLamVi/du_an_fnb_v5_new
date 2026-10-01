@@ -4,31 +4,28 @@ WORK ITEM:
 WI-STAFF-01 (Staff Management, Owner Approval & Lego Permission Control)
 
 PROMPT / TASK:
-- Architecture Freeze, Implementation & Short Store Invitation Code Fix (6-8 Chars) for WI-STAFF-01
+- Architecture Freeze, Implementation & PO Test Forensic Fixes (Store Code Display, Realtime Session Refresh, Permission Enforcement) for WI-STAFF-01
 
 PO DECISION:
 PENDING PO TEST (Chờ Chủ quán Tuấn trực tiếp kiểm tra thực tế trên thiết bị).
 
 STATUS:
 * IMPLEMENTED: YES
-* TESTED: YES (16/16 unit tests passed)
+* TESTED: YES (17/17 unit tests passed)
 * ANALYZED: YES (0 issues found)
-* BUILT: YES (Debug APK SHA256: `E4435E41DEB788020FAF1C924F2AB14D171AFB6170F790655994E92D5BB5ACD9`, Time: 10/1/2026 11:54:41 AM)
+* BUILT: YES (Debug APK SHA256: `B3E826FE5611C17B25934C71AABE4342D37FE38DD0A5567528C8D1257BE0A565`, Time: 10/1/2026 12:18:30 PM)
 * DEPLOYED: YES (Samsung Galaxy M51 `RF8NC11QQVM` & Note 8 `988e50385a3931435330`)
-* COMMITTED & PUSHED: YES (Commit `2fe710d` to `origin main`)
+* COMMITTED & PUSHED: YES (Commit `fdf0683` to `origin main`)
 
 SUMMARY OF WORK COMPLETED & FIXES:
-1. **Short Store Invitation Code (6-8 Chars):** Thiết lập sinh tự động và lưu `invitationCode` ngắn 6 ký tự in hoa (ví dụ: `KH7A29`) cho từng Store. Mã ngắn hiển thị nổi bật trên Dashboard (`DashboardPlaceholderView`) và Quản lý nhân sự (`StaffManagementView`) kèm nút "SAO CHÉP MÃ" cho Chủ quán gửi cho nhân viên.
-2. **Short Code Store Lookup:** Cập nhật `StoreRepository.getStoreByCodeOrId()` và `StaffJoinView` cho phép Nhân viên nhập mã ngắn 6-8 ký tự (hoặc Store ID cũ) để tự động tra cứu chính xác cửa hàng và gửi yêu cầu gia nhập (`status: 'pending'`).
-3. **Owner Approval (SCR-STAFF-02):** Cho phép Chủ quán xem danh sách yêu cầu gia nhập `pending`, thực hiện Phê duyệt (`active`) hoặc Từ chối (`delete()`).
-4. **Staff Management (SCR-STAFF-01):** Danh sách nhân sự cửa hàng, lọc trạng thái, bật/tắt active/inactive, và xóa thành viên.
-5. **Role & Individual Permission Override (SCR-STAFF-03):** Hỗ trợ chức vụ (`role_owner`, `role_manager`, `role_staff`, `role_kitchen`) kết hợp `permissionsOverride` (`Map<String, bool>`) tính toán quyền cuối cùng hiệu lực ngay lập tức (`effective immediately`).
-6. **Security & Isolation:** Đảm bảo tenant isolation, store-scoped permission checks và quyền tối cao của Owner.
+1. **ISSUE-01 Fix (Mã quán ngắn 6-8 ký tự):** Đảm bảo trên mọi giao diện Chủ quán (`DashboardPlaceholderView`, `StaffManagementView`), mã quán hiển thị độc quyền `invitationCode` ngắn 6 ký tự in hoa (ví dụ: `KH7A29`), tuyệt đối không hiển thị `storeId` dài làm mã mời.
+2. **ISSUE-02 Fix (Real-Time Session Refresh):** Bọc `PendingApprovalView` bằng Firestore `.snapshots()` StreamBuilder theo dõi trạng thái `members/{uid}` real-time. Khi Chủ quán bấm Approve, giao diện Nhân viên lập tức tự động chuyển hướng vào Workspace cửa hàng mà KHÔNG CẦN tắt/khởi động lại app.
+3. **ISSUE-03 Fix (Ràng buộc phân quyền giao diện):** Tích hợp kiểm tra vai trò (`roleId`) và quyền hạn (`permissionsOverride`) trên Dashboard. Nhân viên (`role_staff`) khi vào Dashboard CHỈ nhìn thấy nút bấm phù hợp với quyền hạn của mình (ví dụ: `SƠ ĐỒ BÀN`, `MÀN HÌNH BẾP`), ẩn hoàn toàn các nút/thẻ dành riêng cho Chủ quán (`Bật Quản lý ca`, `QUẢN LÝ NHÂN SỰ`, `BÁO CÁO CHI TIẾT`).
 
 EVIDENCE:
-- Unit Tests: 16/16 passed (`flutter test`).
+- Unit Tests: 17/17 passed (`flutter test`).
 - Static Analysis: 0 issues (`flutter analyze`).
-- Git Commit: `2fe710d` (Pushed to GitHub `TuanLamVi/fnb-smart-v5` main).
+- Git Commit: `fdf0683` (Pushed to GitHub `TuanLamVi/fnb-smart-v5` main).
 
 NEXT ACTION:
 - Chờ PO Tuấn thực hiện PO Test.
