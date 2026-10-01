@@ -1,33 +1,35 @@
-===== BEGIN FNB SMART MONITORING & CLOSE-OUT REPORT — WI-LOYALTY-02 / PROMPT-208 =====
+===== BEGIN FNB SMART MONITORING & CLOSE-OUT REPORT — WI-LOYALTY-02 / PROMPT-209 =====
 
 WORK ITEM:
 WI-LOYALTY-02 (Flexible Store Loyalty, Redemption Campaigns & Member Tiers)
 
 PROMPT / TASK:
-- PROMPT-208: Multi-Program Loyalty Engine (Program 1: Earn & Gifts, Program 2: Earn & Tier Discounts, Program 3: Earn, Tiers & Gifts), Active Program switching with confirmation warning, program-scoped independent point ledgers, and automatic tier evaluation rules.
+- PROMPT-209: Complete WI-LOYALTY-02 3 Independent Program Tabs UI & Engine (`🎁 TÍCH ĐIỂM → ĐỔI QUÀ`, `⭐ TÍCH ĐIỂM → THĂNG HẠNG → GIẢM GIÁ`, `👑 TÍCH ĐIỂM → THĂNG HẠNG → GIẢM GIÁ + ĐỔI QUÀ`), independent ratios per tab, independent campaign/tier scopes, active program switching confirmation, and program-scoped point ledgers.
 
 PO DECISION:
 PENDING PO TEST (Chờ Chủ quán Tuấn trực tiếp kiểm tra thực tế trên M51 & Note 8).
 
 STATUS:
 * IMPLEMENTED: YES
-* TESTED: YES (39/39 unit tests passed)
+* TESTED: YES (44/44 unit tests passed)
 * ANALYZED: YES (0 issues found)
-* BUILT: YES (Debug APK SHA256: `72C686C339343DFBA3A582C5F039153541605E27A97877CE8C037DB08FDE2397`, Time: 10/1/2026 8:37:06 PM)
+* BUILT: YES (Debug APK SHA256: `1E73AE7A640831E78FC182062AAB35958A3BA36ED41396FE1F26394F5C574C01`, Time: 10/1/2026 9:13:23 PM)
 * DEPLOYED: YES (Samsung Galaxy M51 `RF8NC11QQVM` & Note 8 `988e50385a3931435330`)
-* COMMITTED & PUSHED: YES (Commit `9fd8f65` to `origin main`)
+* COMMITTED & PUSHED: YES (Commit `5b4ac11` to `origin main`)
 
-SUMMARY OF PROMPT-208 WORK COMPLETED:
-1. **Multi-Program Architecture (3 Programs):** Cấu hình linh hoạt cả 3 chương trình (Chương trình 1: Đổi quà; Chương trình 2: Thăng hạng giảm giá; Chương trình 3: Thăng hạng giảm giá + Đổi quà) cùng lúc trên giao diện `LoyaltySettingsView`.
-2. **Active Program Execution:** Chỉ một chương trình duy nhất được kích hoạt (`● ĐANG KÍCH HOẠT`) và tác động lên các giao dịch mới. Có hộp thoại xác nhận cảnh báo bảo toàn điểm cũ và không quy đổi điểm khi chuyển chương trình.
-3. **Independent Program Point Ledgers:** Điểm của từng chương trình được lưu trữ hoàn toàn độc lập (`programPoints[programId]`), không quy đổi hay dùng chung giữa các chương trình.
-4. **Tier Milestone & Invoice Discount Rule:** Hóa đơn đạt mốc hạng mới chỉ dùng để xác định/cập nhật hạng mới của khách hàng; ưu đãi giảm giá theo hạng mới sẽ bắt đầu áp dụng từ hóa đơn tiếp theo.
-5. **User Guidance:** Tích hợp nút `📖 HƯỚNG DẪN SỬ DỤNG` với popup giải thích chi tiết các câu hỏi thường gặp của Chủ quán.
+SUMMARY OF PROMPT-209 WORK COMPLETED:
+1. **3 Independent Program Tabs UI (`LoyaltySettingsView`):**
+   - **Tab 1 (`🎁 TÍCH ĐIỂM → ĐỔI QUÀ`):** Cấu hình tỷ lệ riêng (ví dụ 30.000đ = 1pt), danh sách phần thưởng đổi quà riêng.
+   - **Tab 2 (`⭐ TÍCH ĐIỂM → THĂNG HẠNG → GIẢM GIÁ`):** Cấu hình tỷ lệ riêng (ví dụ 15.000đ = 1pt), danh sách hạng thành viên & % giảm giá riêng.
+   - **Tab 3 (`👑 TÍCH ĐIỂM → THĂNG HẠNG → GIẢM GIÁ + ĐỔI QUÀ`):** Cấu hình tỷ lệ riêng (ví dụ 50.000đ = 1pt), danh sách hạng & phần thưởng riêng.
+2. **Active Program Execution & Safety Warning:** Hiển thị rõ trạng thái `🟢 ĐANG KÍCH HOẠT` / `⚪ CHƯA KÍCH HOẠT` tại từng tab. Nút kích hoạt chương trình đi kèm dialog xác nhận cảnh báo điểm cũ được bảo toàn trong sổ điểm cũ và KHÔNG chuyển đổi/quy đổi sang chương trình mới.
+3. **Configuration & Point Isolation:** Mỗi tab lưu trữ và đọc đúng tỷ lệ, chiến dịch, hạng và sổ điểm riêng. Việc thay đổi cài đặt ở Tab 1 hoàn toàn không ảnh hưởng tới Tab 2 hay Tab 3.
+4. **User Guide:** Nút `📖 HƯỚNG DẪN SỬ DỤNG` tích hợp popup giải thích chi tiết các câu hỏi vận hành của Chủ quán về mô hình 3 tab độc lập.
 
 EVIDENCE:
-- Unit Tests: 39/39 passed (`flutter test`).
+- Unit Tests: 44/44 passed (`flutter test`, bổ sung test 3 tab độc lập trong `wi_loyalty_02_prompt_209_test.dart`).
 - Static Analysis: 0 issues (`flutter analyze`).
-- Git Commit: `9fd8f65` (Pushed to GitHub `fnb-smart-v5` main).
+- Git Commit: `5b4ac11` (Pushed to GitHub `fnb-smart-v5` main).
 
 NEXT ACTION:
 - Chờ PO Tuấn thực hiện PO Test.
