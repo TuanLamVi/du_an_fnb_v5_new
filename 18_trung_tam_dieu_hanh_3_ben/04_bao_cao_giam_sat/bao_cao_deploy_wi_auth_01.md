@@ -1,0 +1,45 @@
+===== BEGIN FNB SMART FINAL REPORT =====
+
+PROMPT:
+PROMPT-004
+
+WORK ITEM:
+WI-AUTH-01 — Phân hệ Xác thực & Onboarding
+
+SOURCE:
+Repository: fnb-smart-v5
+Branch: main
+Commit: e32ec9f
+
+BUILD:
+PASS
+
+APK:
+Path: C:\Users\Admin\Desktop\Android\fnb_smart\fnb-smart-v5\build\app\outputs\flutter-apk\app-debug.apk
+SHA256: 1AE27398E629B8CEDA3013DE2CBA8B2F8A1C79E701A5EC55F32D23A8BA626B6B
+
+DEVICE 1:
+Samsung Galaxy M51 (SM-M515F, Device ID: RF8NC11QQVM, Android 12)
+ADB: PASS
+INSTALL: PASS
+LAUNCH: PASS
+
+DEVICE 2:
+Samsung Galaxy Note 8 (SM-N950F, Device ID: 988e50385a3931435330, Android 9)
+ADB: PASS
+INSTALL: PASS
+LAUNCH: PASS
+
+BUILD IDENTITY:
+VERIFIED
+
+PO TEST:
+CHỜ PO TEST
+
+BLOCKERS:
+NONE
+
+STATUS:
+CHỜ PO KIỂM TRA
+
+===== END FNB SMART FINAL REPORT =====
