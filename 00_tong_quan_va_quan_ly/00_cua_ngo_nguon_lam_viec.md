@@ -8,9 +8,7 @@ Toàn bộ tài liệu, quy định, thiết kế, và hồ sơ dự án phải 
 
 ## 2. Nguồn Source Ứng Dụng Chính Thức (Official Application Source Code)
 Toàn bộ mã nguồn ứng dụng (application source code) được đặt tại:
-`C:\Users\Admin\Desktop\Android\fnb_smart\fnb-smart-v5`
-Và thư mục project ứng dụng thực tế:
-`C:\Users\Admin\Desktop\Android\fnb_smart`
+`C:\Users\Admin\Desktop\Android\fnb-smart-v5`
 
 ## 3. Nguồn Cũ — Ngoài Phạm Vi (Out of Scope Legacy Sources)
 Mọi tài liệu, kho lưu trữ (repository), hoặc mã nguồn cũ trước đây, đặc biệt bao gồm:
