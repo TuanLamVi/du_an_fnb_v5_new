@@ -37,3 +37,12 @@ Lộ trình phát triển sản phẩm F&B SMART V5.1 được định hướng 
 
 ## 3. Điểm cần PO quyết định (TBD / PO Decision Needed)
 - Mức độ ưu tiên tích hợp sâu các tính năng Loyalty nâng cao (tích điểm đổi voucher tự động qua SMS/App thứ ba) sẽ được đưa vào roadmap bản V5.2 sau khi MVP V5.1 hoàn tất nghiệm thu.
+
+## 4. Feature Roadmaps Riêng (Feature-Specific Roadmaps)
+- **Quản lý Khu vực / Bàn / Món / Topping:** Xem chi tiết tại `01_san_pham/feature_roadmap_quan_ly_khu_vuc_ban_mon_topping.md`.
+  - Phase 1 (Khu vực & Bàn): `COMPLETED / PROTECTED / LOCKED`
+  - Phase 2 (Danh mục & Món): `NEXT FEATURE PHASE / NOT STARTED / FORENSIC PENDING`
+  - Phase 3 (Topping): `NOT STARTED`
+  - Phase 4 (Phân quyền): `NOT STARTED`
+  - Phase 5 (An toàn dữ liệu): `NOT STARTED`
+
