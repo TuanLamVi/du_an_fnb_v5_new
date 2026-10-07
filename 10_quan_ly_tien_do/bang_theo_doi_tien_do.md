@@ -8,7 +8,7 @@
 | **WI-KDS-01** | Nhà bếp KDS | Phase 4 | COMPLETED (Code) / DOCUMENTED | Sẵn sàng |
 | **WI-PAY-01** | Thanh toán & Checkout | Phase 4 | COMPLETED (Code) / DOCUMENTED | Sẵn sàng |
 | **WI-SHIFT-01** | Quản lý Ca làm việc | Phase 5 | COMPLETED (Code) / DOCUMENTED | Sẵn sàng |
-| **WI-CUST-01** | Khách hàng & Công nợ | Phase 5 | PARTIAL | Cần xử lý GAP-LOYAL-01 |
+| **WI-CUST-01** | Khách hàng & Công nợ | Phase 5 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Decision: WI-CUST-01 được PO chấp thuận đóng Work Item dựa trên forensic, implementation evidence và các decision/closeout records hiện có. Auto Tier Discount không phải blocker |
 | **WI-CUSTOMER-360-PURCHASE-HISTORY-FIX-01** | Customer 360 & Purchase History | Phase 5 | COMPLETED / PO_VERIFIED / LOCKED | PO đã kiểm thử và xác nhận PASS |
 | **WI-APP-DISPLAY-NAME-01** | Đổi tên hiển thị ứng dụng (FnB Smart) | Phase 2 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn test PASS trên Note 8, M51, OPPO CPH2073 |
 | **WI-TOPPING-01** | Quản lý Topping & Phân hệ Topping (Phase 3) | Phase 3 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn test PASS 8/8 Tests (T1-T8) |

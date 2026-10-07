@@ -26,4 +26,5 @@
 | **DEC-WI-TABLE-CLEANING-BUTTON-FIX-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TABLE-CLEANING-BUTTON-FIX-01 (PROMPT-305 / PROMPT-308 PO PASS, Nút DỌN BÀN dọn bàn bẩn thành công) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-TRANSACTION-DETAIL-REPRINT-INVOICE-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TRANSACTION-DETAIL-REPRINT-INVOICE-01 (PROMPT-310 PO PASS, In lại hóa đơn từ TransactionDetailView) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-UI-LOYALTY-TERMINOLOGY-FIX-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-UI-LOYALTY-TERMINOLOGY-FIX-01 (PROMPT-314 / PROMPT-315 PO PASS, Chuẩn hóa tiếng Việt Khách hàng thân thiết) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-CUST-01-FULL-CLOSEOUT** | Phê duyệt đóng chính thức Work Item WI-CUST-01 — Customer / Debt / Loyalty (COMPLETED / PO_VERIFIED / PROTECTED / LOCKED dựa trên forensic, evidence, Customer 360, Customer Lookup UX, Loyalty terminology closeouts, permission/tenant isolation verification. Auto Tier Discount là enhancement mở rộng riêng, không chặn closeout) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
 
