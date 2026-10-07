@@ -19,3 +19,4 @@
 | **WI-TABLE-CLEANING-BUTTON-FIX-01** | Table Cleaning DỌN BÀN Button Fix (PROMPT-305 / PROMPT-308) | Phase 3 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn xác nhận PROMPT-305/308 PASS (Nút DỌN BÀN dọn bàn bẩn thành công) |
 | **WI-TRANSACTION-DETAIL-REPRINT-INVOICE-01** | Transaction Detail Reprint Invoice (PROMPT-310) | Phase 4 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn xác nhận PROMPT-310 PASS (In lại hóa đơn từ lịch sử giao dịch) |
 | **WI-UI-LOYALTY-TERMINOLOGY-FIX-01** | Plain Vietnamese Terminology Fix (PROMPT-314 / PROMPT-315) | Phase 5 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn xác nhận PROMPT-314/315 PASS (Chuẩn hóa tên gọi Khách hàng thân thiết) |
+| **PHASE-06-BASELINE-LOCK** | Phase 6 — Audit & Master Baseline V5.1 Lock | Phase 6 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Decision: DEC-PHASE6-MASTER-BASELINE-LOCK chính thức khóa Master Baseline V5.1 |

@@ -2,10 +2,13 @@
 
 ## 1. Thông tin chung
 - **Tên dự án:** F&B SMART V5.1
-- **Phiên bản Baseline:** V5.1-BASELINE-01
-- **Ngày phê duyệt Baseline:** 2026-09-30
-- **Trạng thái PO:** `APPROVED` (`DEC-01`)
-- **Kết quả Audit:** `READY_WITH_GAPS`
+- **Phiên bản Baseline:** V5.1-OFFICIALLY-LOCKED
+- **Ngày phê duyệt & Khóa Baseline:** 2026-10-07
+- **Trạng thái PO:** `LOCKED` (`DEC-PHASE6-MASTER-BASELINE-LOCK`)
+- **Kết quả Audit:** `MASTER BASELINE V5.1 OFFICIALLY LOCKED`
+- **Traceability:** `PASS`
+- **Technical Blockers:** `NONE`
+- **Governance Blockers:** `NONE`
 - **Thư mục lưu trữ:** `C:\Users\Admin\Desktop\Android\ho so du an fnb`
 
 ## 2. Danh mục toàn bộ hồ sơ trong Baseline (18 nhóm thư mục)
