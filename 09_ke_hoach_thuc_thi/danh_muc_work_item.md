@@ -5,6 +5,7 @@ Danh mục các công việc (Work Items) chuẩn hóa từ tài liệu `10_WORK
 | Work Item ID | Tên Work Item | Phase | Feature liên quan | Dependency | Scope chính | Trạng thái | Nguồn |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **WI-AUTH-01** | Xây dựng phân hệ Xác thực | Phase 1 | FEAT-AUTH-01 | None | Đăng nhập Firebase Auth, phân quyền | CONFIRMED | `10_WORK_ITEM_CONTRACT` |
+| **WI-AUTH-OTP-FORENSIC-FIX-02** | OTP Auth End-to-End Fix (Auto Read, Auto Verify, Auto Login, Auto Navigation) | Phase 1 | FEAT-AUTH-01 | WI-AUTH-01 | Fix OTP verification freeze, add 6-digit auto-verify, and automatic navigation to role selection post-login | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | `PO_VERIFIED_TUAN` |
 | **WI-SETUP-01** | Xây dựng Quick Setup & Menu Template | Phase 2 | FEAT-SETUP-01, FEAT-MENU-01 | WI-AUTH-01 | Khởi tạo cửa hàng, chọn mô hình kinh doanh, clone menu | CONFIRMED | `QUICK_SETUP_DISCOVERY` |
 | **WI-POS-01** | Xây dựng màn hình POS Bán hàng | Phase 3 | FEAT-POS-01, FEAT-TABLE-01 | WI-SETUP-01 | Giao diện chọn bàn, gọi món, giỏ hàng | CONFIRMED | `POS_ORDERING_DISCOVERY` |
 | **WI-KDS-01** | Xây dựng màn hình Nhà bếp KDS | Phase 4 | FEAT-KDS-01 | WI-POS-01 | Hiển thị và cập nhật trạng thái chế biến món ăn | CONFIRMED | `KDS_KITCHEN_DISCOVERY` |

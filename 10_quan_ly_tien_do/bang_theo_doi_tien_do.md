@@ -3,6 +3,7 @@
 | Work Item ID | Tên Work Item | Phase | Trạng thái | Ghi chú / Blocker |
 | :--- | :--- | :--- | :--- | :--- |
 | **WI-AUTH-01** | Phân hệ Xác thực | Phase 1 | COMPLETED (Code) / DOCUMENTED | Sẵn sàng |
+| **WI-AUTH-OTP-FORENSIC-FIX-02** | OTP Auth End-to-End Fix (PROMPT-WI-AUTH-OTP-FORENSIC-FIX-02) | Phase 1 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn test thực tế trên Samsung Galaxy M51 PASS (Auto verify & auto navigation hoàn tất không cần restart app) |
 | **WI-SETUP-01** | Quick Setup & Menu | Phase 2 | COMPLETED (Code) / DOCUMENTED | Sẵn sàng |
 | **WI-POS-01** | POS Bán hàng & Bàn | Phase 3 | COMPLETED (Code) / DOCUMENTED | Sấn sàng |
 | **WI-KDS-01** | Nhà bếp KDS | Phase 4 | COMPLETED (Code) / DOCUMENTED | Sẵn sàng |
