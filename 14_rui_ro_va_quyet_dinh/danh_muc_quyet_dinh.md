@@ -22,4 +22,5 @@
 | **DEC-WI-PRIMARY-JOB-NAVIGATION-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-PRIMARY-JOB-NAVIGATION-01 (PROMPT-274 PO PASS, Cold Start to Primary Job & Back to Dashboard verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-POS-CART-CONFIGURATION-DISPLAY-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-POS-CART-CONFIGURATION-DISPLAY-01 (PROMPT-284 PO PASS, Cart renders Size, Option, Topping accurately) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-CUSTOMER-LOOKUP-UX-IMPL-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-CUSTOMER-LOOKUP-UX-IMPL-01 (PROMPT-288 / PROMPT-293 PO PASS, Customer Lookup & Add Customer flows separated) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-TABLE-TEMP-INVOICE-PAID-RETURN-FIX-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TABLE-TEMP-INVOICE-PAID-RETURN-FIX-01 (PROMPT-302 PO PASS, Paid order return blocked & Table Map context preservation verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 
