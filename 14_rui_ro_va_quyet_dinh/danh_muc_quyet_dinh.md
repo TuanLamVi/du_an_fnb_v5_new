@@ -19,4 +19,5 @@
 | **DEC-FEATURE-PHASE-4-PERMISSIONS** | Phê duyệt nghiệm thu & Khóa chính thức Feature Roadmap Phase 4 — Phân quyền (PO Test PASS Prompt-121A & Prompt-122) | 2026-10-03 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-APP-DISPLAY-NAME-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-APP-DISPLAY-NAME-01 (Đổi tên hiển thị ứng dụng thành "FnB Smart", PO Test PASS trên Galaxy Note 8, Galaxy M51, OPPO CPH2073) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-TOPPING-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TOPPING-01 Phân hệ Topping (PROMPT-269, PO Test T1-T8 PASS, No Double-Count, Order Snapshot Verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-PRIMARY-JOB-NAVIGATION-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-PRIMARY-JOB-NAVIGATION-01 (PROMPT-274 PO PASS, Cold Start to Primary Job & Back to Dashboard verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 
