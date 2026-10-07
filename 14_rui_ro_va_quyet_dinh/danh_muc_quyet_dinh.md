@@ -23,4 +23,7 @@
 | **DEC-WI-POS-CART-CONFIGURATION-DISPLAY-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-POS-CART-CONFIGURATION-DISPLAY-01 (PROMPT-284 PO PASS, Cart renders Size, Option, Topping accurately) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-CUSTOMER-LOOKUP-UX-IMPL-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-CUSTOMER-LOOKUP-UX-IMPL-01 (PROMPT-288 / PROMPT-293 PO PASS, Customer Lookup & Add Customer flows separated) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-TABLE-TEMP-INVOICE-PAID-RETURN-FIX-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TABLE-TEMP-INVOICE-PAID-RETURN-FIX-01 (PROMPT-302 PO PASS, Paid order return blocked & Table Map context preservation verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-TABLE-CLEANING-BUTTON-FIX-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TABLE-CLEANING-BUTTON-FIX-01 (PROMPT-305 / PROMPT-308 PO PASS, Nút DỌN BÀN dọn bàn bẩn thành công) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-TRANSACTION-DETAIL-REPRINT-INVOICE-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TRANSACTION-DETAIL-REPRINT-INVOICE-01 (PROMPT-310 PO PASS, In lại hóa đơn từ TransactionDetailView) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-UI-LOYALTY-TERMINOLOGY-FIX-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-UI-LOYALTY-TERMINOLOGY-FIX-01 (PROMPT-314 / PROMPT-315 PO PASS, Chuẩn hóa tiếng Việt Khách hàng thân thiết) | 2026-10-07 | PO (Tuấn) | `APPROVED` |
 
