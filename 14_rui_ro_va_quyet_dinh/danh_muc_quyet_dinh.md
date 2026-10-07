@@ -17,4 +17,6 @@
 | **DEC-FEATURE-PHASE-2-MENU** | Phê duyệt nghiệm thu & Khóa chính thức Feature Roadmap Phase 2 — Danh mục, Món & Nơi chế biến (PO Test PASS "Phase 2 PASS hết") | 2026-10-03 | PO (Tuấn) | `APPROVED` |
 | **DEC-FEATURE-PHASE-3-TOPPING** | Phê duyệt nghiệm thu & Khóa chính thức Feature Roadmap Phase 3 — Quản lý Topping (PO Test PASS "KDS và hóa đơn đều đúng") | 2026-10-03 | PO (Tuấn) | `APPROVED` |
 | **DEC-FEATURE-PHASE-4-PERMISSIONS** | Phê duyệt nghiệm thu & Khóa chính thức Feature Roadmap Phase 4 — Phân quyền (PO Test PASS Prompt-121A & Prompt-122) | 2026-10-03 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-APP-DISPLAY-NAME-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-APP-DISPLAY-NAME-01 (Đổi tên hiển thị ứng dụng thành "FnB Smart", PO Test PASS trên Galaxy Note 8, Galaxy M51, OPPO CPH2073) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-TOPPING-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TOPPING-01 Phân hệ Topping (PROMPT-269, PO Test T1-T8 PASS, No Double-Count, Order Snapshot Verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 

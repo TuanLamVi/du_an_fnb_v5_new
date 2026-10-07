@@ -23,7 +23,7 @@
 
 ### PHASE 3 — QUẢN LÝ TOPPING
 - **Phạm vi:** Topping Library CRUD, Product ↔ Topping Assignment, Pricing & No Double-Count, Order Line Snapshot, KDS & Invoice & Transaction History Topping Display.
-- **Trạng thái hiện tại:** `PO_VERIFIED` | `COMPLETED` | `PROTECTED` | `LOCKED` (PROMPT-118)
+- **Trạng thái hiện tại:** `PO_VERIFIED` | `COMPLETED` | `PROTECTED` | `LOCKED` (PROMPT-269 PO Field Test T1-T8 PASS)
 
 ### PHASE 4 — PHÂN QUYỀN
 - **Phạm vi:** Menu UI Grouping ("Cài đặt thực đơn"), Permission Assignment (`PERM-MENU-MGT`), View-level & Firestore Rules enforcement.

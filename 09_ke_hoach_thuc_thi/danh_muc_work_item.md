@@ -11,3 +11,4 @@ Danh mục các công việc (Work Items) chuẩn hóa từ tài liệu `10_WORK
 | **WI-PAY-01** | Xây dựng tính năng Thanh toán & Checkout | Phase 4 | FEAT-PAY-01 | WI-POS-01 | Xử lý thanh toán, in hóa đơn, đóng bàn | CONFIRMED | `CHECKOUT_PAYMENT_DISCOVERY` |
 | **WI-SHIFT-01** | Xây dựng quản lý Ca làm việc | Phase 5 | FEAT-SHIFT-01 | WI-AUTH-01 | Mở/đóng ca, kiểm đếm tiền mặt | CONFIRMED | `SHIFT_MANAGEMENT_DISCOVERY` |
 | **WI-CUST-01** | Xây dựng Quản lý Khách hàng & Công nợ | Phase 5 | FEAT-CUST-01, FEAT-LOYAL-01 | WI-POS-01 | Quản lý thông tin khách hàng, công nợ, tích điểm (GAP-LOYAL-01) | PARTIAL | `CUSTOMER_LOYALTY_DISCOVERY` |
+| **WI-APP-DISPLAY-NAME-01** | Đổi tên hiển thị ứng dụng (FnB Smart) | Phase 2 | FEAT-SETUP-01 | None | Cập nhật app display name thành "FnB Smart" | COMPLETED / PO_VERIFIED / LOCKED | `PO_VERIFIED_TUAN` |
