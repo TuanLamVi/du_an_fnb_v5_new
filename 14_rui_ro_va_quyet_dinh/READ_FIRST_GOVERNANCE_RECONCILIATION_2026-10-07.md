@@ -52,9 +52,9 @@ Vì vậy các mục trên được đánh dấu **NOT VERIFIED IN GOVERNANCE**.
 - EVIDENCE: PARTIAL
 - PO TEST: chỉ công nhận khi có record/evidence trong Governance
 - GOVERNANCE: RECONCILED / gaps recorded
-- COMMIT: PENDING trong file này
-- PUSH: PENDING trong file này
-- GITHUB VERIFY: PENDING trong file này
+- COMMIT: PASS — `4a59d5eb0a9fd50a3e4077a2403c295c43d6aa15`
+- PUSH: PASS — branch `main` đã được cập nhật
+- GITHUB VERIFY: PASS — file đã đọc lại từ `main`
 
 ## Quy tắc tiếp theo
 
