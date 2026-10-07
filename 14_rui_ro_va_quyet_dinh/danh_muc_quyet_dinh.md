@@ -21,4 +21,5 @@
 | **DEC-WI-TOPPING-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-TOPPING-01 Phân hệ Topping (PROMPT-269, PO Test T1-T8 PASS, No Double-Count, Order Snapshot Verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-PRIMARY-JOB-NAVIGATION-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-PRIMARY-JOB-NAVIGATION-01 (PROMPT-274 PO PASS, Cold Start to Primary Job & Back to Dashboard verified) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 | **DEC-WI-POS-CART-CONFIGURATION-DISPLAY-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-POS-CART-CONFIGURATION-DISPLAY-01 (PROMPT-284 PO PASS, Cart renders Size, Option, Topping accurately) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
+| **DEC-WI-CUSTOMER-LOOKUP-UX-IMPL-01** | Phê duyệt nghiệm thu & Khóa chính thức WI-CUSTOMER-LOOKUP-UX-IMPL-01 (PROMPT-288 / PROMPT-293 PO PASS, Customer Lookup & Add Customer flows separated) | 2026-10-05 | PO (Tuấn) | `APPROVED` |
 

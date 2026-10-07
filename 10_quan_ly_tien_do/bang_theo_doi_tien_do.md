@@ -14,3 +14,4 @@
 | **WI-TOPPING-01** | Quản lý Topping & Phân hệ Topping (Phase 3) | Phase 3 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn test PASS 8/8 Tests (T1-T8) |
 | **WI-PRIMARY-JOB-NAVIGATION-01** | Primary Job Startup Navigation & Dashboard Back Flow (PROMPT-274) | Phase 2 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn test PASS Cold Start & Back Flow |
 | **WI-POS-CART-CONFIGURATION-DISPLAY-01** | POS Cart Size / Option / Topping Rendering (PROMPT-284) | Phase 3 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn xác nhận PO PASS (Size, Option, Topping hiển thị đầy đủ trong Giỏ hàng) |
+| **WI-CUSTOMER-LOOKUP-UX-IMPL-01** | Redesign Customer Lookup & Add Customer UX Separation (PROMPT-288) | Phase 5 | COMPLETED / PO_VERIFIED / PROTECTED / LOCKED | PO Tuấn xác nhận PO PASS (Tách biệt 2 luồng Tra cứu & Thêm khách hàng) |
