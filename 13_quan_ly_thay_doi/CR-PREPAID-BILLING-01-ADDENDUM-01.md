@@ -5,7 +5,7 @@
 - **Work Item:** WI-PREPAID-EMPLOYEE-BILLING-01
 - **Related PO decision:** DEC-PREPAID-BILLING-LATE-DEVICE-01
 - **Status:** `PO APPROVED — 2026-10-10 (EXPLICIT CHAT APPROVAL)`
-- **Execution authorization for this addendum:** `NOT GRANTED`
+- **Execution authorization for this addendum:** `PO AUTHORIZED — FEATURE BRANCH / ISOLATED TEST ONLY — 2026-10-10`; record `DECISION_PREPAID_BILLING_ADDENDUM_EXECUTION_AUTHORIZATION.md`
 - **Environment:** Emulator/staging only after approval and required Gate 1/Gate 2 evidence
 - **Production:** `NOT AUTHORIZED`
 - **Date prepared:** 2026-10-10 (Vietnam time, UTC+7)
@@ -14,7 +14,7 @@
 
 This addendum extends the previously approved prepaid employee-device billing requirements to cover a staff-device connection first becoming eligible after the daily billing boundary at 00:00 Asia/Ho_Chi_Minh.
 
-The separate PO business-policy decision, `DEC-PREPAID-BILLING-LATE-DEVICE-01`, is approved. The PO explicitly approved this CR addendum on 2026-10-10 in the conversation. The approval is recorded in `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`. This CR approval does not grant execution authorization. The existing approval and authorization records for the parent CR must not be rewritten or treated as automatic approval of this expanded scope.
+The separate PO business-policy decision, `DEC-PREPAID-BILLING-LATE-DEVICE-01`, is approved. The PO explicitly approved this CR addendum on 2026-10-10 in the conversation. The approval is recorded in `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`. CR approval alone did not grant execution authorization; the PO subsequently granted a separate bounded authorization on 2026-10-10, recorded in `DECISION_PREPAID_BILLING_ADDENDUM_EXECUTION_AUTHORIZATION.md`. The historical approval and authorization records for the parent CR remain unchanged.
 
 ## 2. Problem statement / root cause
 
@@ -84,7 +84,7 @@ Before any source/configuration edit for this addendum:
 - Complete and record Gate 2 technical design and acceptance contract, including concurrent base daily deduction, device removal, connection creation, incremental billing and retry semantics.
 - Resolve any conflict with the approved data architecture and security contracts.
 - PO approval of this CR addendum: completed on 2026-10-10 and recorded in `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`.
-- Obtain separate execution authorization for this expanded scope; the existing parent CR authorization does not automatically authorize this incremental-charge scope.
+- Separate expanded-scope execution authorization was granted by the PO on 2026-10-10; apply only the scope and exclusions in `DECISION_PREPAID_BILLING_ADDENDUM_EXECUTION_AUTHORIZATION.md`.
 
 If any prerequisite fails, stop at first failure and report evidence. No guessing, no production action.
 
@@ -98,10 +98,10 @@ Rollback must be designed before implementation. If an emulator/staging test fai
 
 - PO policy decision: `APPROVED` via `DEC-PREPAID-BILLING-LATE-DEVICE-01`.
 - This CR addendum: `PO APPROVED — 2026-10-10`; approval record: `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`.
-- Expanded-scope execution authorization: `NOT GRANTED`.
+- Expanded-scope execution authorization: `PO AUTHORIZED — FEATURE BRANCH / ISOLATED TEST ONLY` under `DECISION_PREPAID_BILLING_ADDENDUM_EXECUTION_AUTHORIZATION.md`.
 - Gate 1/Gate 2 evidence for this expanded scope: `PENDING VERIFICATION/RECORDING`; no source/configuration edit is permitted until required evidence and authorization are verified.
 - Tests: all original and addendum cases remain `NOT RUN` unless actual execution evidence is recorded.
 - Production: `NOT AUTHORIZED`.
 - Current verdict: `BLOCKED — DO NOT MERGE`.
 
-**Next permitted activity:** Complete and record source-grounded Gate 1 and Gate 2 evidence for the approved addendum, then obtain/confirm separate execution authorization for the expanded scope before any source/configuration change.
+**Next permitted activity:** Continue the bounded feature-branch implementation and isolated emulator/test verification under the separate PO authorization. Gate/test results must be recorded truthfully. No merge to `main`, production deployment, live-data operation, or real-money transaction is authorized.
