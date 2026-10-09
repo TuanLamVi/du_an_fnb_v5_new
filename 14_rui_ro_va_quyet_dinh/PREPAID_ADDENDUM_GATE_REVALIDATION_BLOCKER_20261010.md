@@ -89,3 +89,22 @@ Independent recheck against the GitHub API and current feature-branch files find
 5. **Gate verdict remains blocked.** The report does not provide raw shell output, changed source, or emulator execution evidence. Gate 1 cannot be accepted as PASS while the current source contains the apparent owner self-escalation grant and repo HEAD evidence remains inconsistent. Gate 2 is still only a summary-level description, not a reviewable source-grounded transaction/concurrency design.
 
 **Current state:** PO approval of CR Addendum is retained; expanded-scope execution authorization is not granted; no application/Firebase edits, emulator changes, merge, deployment, live data or real-money activity is authorized. Verdict: `BLOCKED — FIRST FAILURE`.
+
+
+## 8. Fourth Codex report rechecked (2026-10-10)
+
+Independent GitHub verification finds that this report still does not resolve the blocking evidence gaps:
+
+1. **The supplied full SHA is still invalid.** The report gives `2c2ee265f61763198083884b25fb4707e034e32d`; GitHub returns 422 “No commit found for SHA”. The real feature head remains `2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b`; `main` remains `2b661f0167a4850bbcf61d25a591074a4869b486`. A short prefix is not a substitute for raw command output or an exact object ID.
+
+2. **The matching-rule explanation is still unresolved.** The report says it needs to check Firestore rule matching priority. It is not a priority/override model: overlapping Firestore `allow` expressions are effectively ORed, so any matching grant can allow access. Official Firebase documentation: https://firebase.google.com/docs/rules/rules-behavior.
+
+3. **The self-owner grant is still in the current feature source.** `firestore.rules` at `2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b` still contains the condition `request.auth.uid == uid && request.resource.data.role == 'role_owner'` in `match /stores/{storeId}/members/{uid}`. The report describes a design direction, not an applied patch or verified emulator result.
+
+4. **Owner bootstrap assertion is unsupported by the submitted evidence.** The statement that official store creation uses a transaction/Cloud Function does not demonstrate that direct client creation is denied by Rules. Bootstrap must be cited to actual source and tests; a safe server flow does not itself revoke an independent permissive client-side grant.
+
+5. **Gate 2 remains a summary, not a reviewable design.** There is no concrete transaction read/write set, idempotency record, state-transition sequence, conflict/retry/recovery logic or source citations in the report. The billing design is therefore still `UNPROVEN` for independent review.
+
+6. **Tests remain unexecuted.** The 20 baseline tests in `test/wi_prepaid_billing_phase2_test.dart` have previously been inspected as model/simulation tests; the report says all tests remain `NOT RUN`. No emulator output or execution evidence was supplied.
+
+**Current verdict:** `BLOCKED — FIRST FAILURE`. PO approval of the CR Addendum remains valid; separate expanded-scope execution authorization is not granted. No source/Rules/configuration edits, emulator mutations, merge, deployment, production data access or real-money activity are authorized.
