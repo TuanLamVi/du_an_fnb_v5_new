@@ -138,6 +138,16 @@ Add and keep the following cases `NOT RUN` until execution evidence is recorded:
 This addendum records the PO's business-policy choice and change-control approval without rewriting the historical status of the original CR or original bounded authorization. `CR-PREPAID-BILLING-01-ADD-01` was explicitly approved by the PO on 2026-10-10; the approval is recorded in `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`. No application source, Firebase Rules, configuration, staging/emulator mutation, deployment, or production data operation for the expanded behavior may proceed until source-grounded Gate 1 and Gate 2 evidence is verified and separate execution authorization for this expanded scope is granted/confirmed. Do not mark any test `PASS` without actual execution logs. Do not mark the Work Item `PO_VERIFIED / PROTECTED / LOCKED` before PO acceptance.
 
 
+
+## 9. Independent Gate Revalidation — BLOCKED (2026-10-10)
+
+- Review record: [PREPAID_ADDENDUM_GATE_REVALIDATION_BLOCKER_20261010.md](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/14_rui_ro_va_quyet_dinh/PREPAID_ADDENDUM_GATE_REVALIDATION_BLOCKER_20261010.md).
+- The submitted report's local HEAD `8ee0fa3d0dbe93e25b1285eb8035ed88647bb1f0` could not be resolved against GitHub. GitHub reports app `main` at `2b661f0167a4850bbcf61d25a591074a4869b486` and feature branch at `2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b`.
+- The feature branch Firestore Rules contain an apparent self-owner-creation grant in `match /stores/{storeId}/members/{uid}`; see the revalidation record for the exact source excerpt and required security test.
+- The submitted Gate 2 description is not yet accompanied by a source-grounded transaction/concurrency design sufficient for independent verification.
+- **Current addendum status:** PO CR approval recorded; Gate 1 not PASS; Gate 2 not proven; expanded-scope execution authorization not granted; tests remain `NOT RUN`; `BLOCKED — DO NOT MERGE`; production remains `NOT AUTHORIZED`.
+- Permitted next step: further READ-ONLY evidence reconciliation only. No application source or Firebase configuration changes until all blockers are resolved, Gate 1/Gate 2 evidence is recorded, and separate execution authorization is granted/confirmed.
+
 ## 8. Change-control follow-up after PO policy decision
 
 - PO business-policy decision recorded at [DEC-PREPAID-BILLING-LATE-DEVICE-01](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/14_rui_ro_loi_thay_doi_quyet_dinh/DECISION_PREPAID_BILLING_LATE_DEVICE_ACTIVATION_POLICY.md).
