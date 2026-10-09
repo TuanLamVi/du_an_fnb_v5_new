@@ -136,3 +136,12 @@ Add and keep the following cases `NOT RUN` until execution evidence is recorded:
 ### Governance and execution boundary
 
 This addendum records the PO's business-policy choice only. It does not rewrite the historical status of the original CR or original bounded authorization. The newly expanded same-day incremental-fee behavior requires a CR revision/addendum and updated acceptance contract. No application source, Firebase Rules, configuration, deployment, or production data operation for the expanded behavior may proceed until the CR revision is approved and the mandatory Gate 1/Gate 2 prerequisites are evidenced. Do not mark any test `PASS` without actual execution logs. Do not mark the Work Item `PO_VERIFIED / PROTECTED / LOCKED` before PO acceptance.
+
+
+## 8. Change-control follow-up after PO policy decision
+
+- PO business-policy decision recorded at [DEC-PREPAID-BILLING-LATE-DEVICE-01](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/14_rui_ro_loi_thay_doi_quyet_dinh/DECISION_PREPAID_BILLING_LATE_DEVICE_ACTIVATION_POLICY.md).
+- The implementation change is tracked separately by [CR-PREPAID-BILLING-01-ADD-01](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/13_quan_ly_thay_doi/CR-PREPAID-BILLING-01-ADDENDUM-01.md), currently `DRAFT / PENDING PO CR APPROVAL`.
+- Policy approval does not approve the CR addendum and does not grant execution authorization for the expanded scope.
+- Before edits, complete and evidence Gate 1 and Gate 2 specifically for the incremental same-day charge/activation behavior. Add TC-LATE-DEVICE-15 through TC-LATE-DEVICE-20 to the acceptance matrix, all `NOT RUN` until executed.
+- Current verdict remains `BLOCKED — DO NOT MERGE`; production remains `NOT AUTHORIZED`.
