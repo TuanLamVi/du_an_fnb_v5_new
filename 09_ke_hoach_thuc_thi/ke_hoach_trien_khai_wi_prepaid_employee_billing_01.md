@@ -6,13 +6,15 @@
 - Change Request: `CR-PREPAID-BILLING-01`
 - Decision: `DEC-PREPAID-BILLING-01`
 - CR: `APPROVED BY PO — 2026-10-09`
-- Execution Authorization: `NOT GRANTED`
-- Work Item status: `EXECUTION GATE PREPARATION`
-- Application source changes: `NOT AUTHORIZED`
-- Firebase / production changes: `NOT AUTHORIZED`
+- Execution Authorization: `PO GRANTED — STAGING/TEST ONLY, CONDITIONAL ON GATE 1 AND GATE 2 VERIFICATION — 2026-10-09`
+- Work Item status: `AUTHORIZED FOR GATED STAGING IMPLEMENTATION`
+- Application source changes: `AUTHORIZED ONLY AFTER GATE 1 FORENSIC AND GATE 2 TECHNICAL DESIGN ARE VERIFIED`
+- Firebase Emulator / staging changes: `AUTHORIZED ONLY WITHIN VERIFIED SCOPE`
+- Production / live-data changes: `NOT AUTHORIZED`
+- PO authorization record: `14_rui_ro_loi_thay_doi_quyet_dinh/DECISION_PREPAID_BILLING_EXECUTION_AUTHORIZATION.md`
 - Tests: all planned tests remain `NOT RUN` until executed and evidence is recorded.
 
-PO approval covers the prepaid billing requirements and Governance change request only. It is not authorization to edit application code, deploy Cloud Functions, change Firestore rules/schema, migrate data, or affect production.
+The PO has now separately authorized the bounded staging/test implementation scope in the decision record referenced above. This does not waive Gate 1 or Gate 2: Codex must complete and record both before the first source/configuration change. Production deployment, production Firestore/rules/schema mutation, live-data migration, real-money deductions, and production transactions remain explicitly unauthorized.
 
 ## 2. Official target and repository boundary
 
@@ -43,11 +45,11 @@ PO approval covers the prepaid billing requirements and Governance change reques
 
 - [x] PO approved `CR-PREPAID-BILLING-01`.
 - [x] Governance records updated on `main`.
-- [ ] Keep execution authorization separate from CR approval.
+- [x] Execution authorization recorded separately from CR approval, with staging/test-only scope and production explicitly excluded.
 
 ### GATE 1 — Application READ-FIRST / forensic (read-only)
 
-Must be completed before implementation authorization is requested:
+Must be completed and evidenced before the first implementation change; the PO authorization does not waive these prerequisites:
 - [ ] Confirm exact application repository, branch, HEAD, clean/dirty worktree, and protected baseline.
 - [ ] Read official Kim Chi Nam / source-of-truth rules and applicable product, architecture, data, security, billing, trial, and testing contracts from the official documentation source.
 - [ ] Inspect existing store/tenant identity, owner/staff membership, device/connection identity and revocation/suspension flows.
@@ -64,20 +66,18 @@ Must be completed before implementation authorization is requested:
 - [ ] Include emulator/staging-only test strategy; no production test transactions or real deductions.
 - [ ] Resolve any contract/source conflict with the PO before proceeding.
 
-### GATE 3 — Separate execution authorization
+### GATE 3 — PO execution authorization (recorded)
 
-Request an explicit PO authorization after Gates 1 and 2 have evidence. The request must state:
-- exact application repository, branch, and approved files/scope;
-- whether Firestore schema/rules/index changes are included;
-- whether staging deployment is included;
-- explicit production exclusion unless separately authorized;
-- tests, build/device verification, rollback, and evidence plan.
+- [x] Explicit PO authorization recorded on 2026-10-09 in `14_rui_ro_loi_thay_doi_quyet_dinh/DECISION_PREPAID_BILLING_EXECUTION_AUTHORIZATION.md`.
+- [x] Scope is limited to the official application repository, a dedicated branch, and emulator/staging/test verification.
+- [x] Production and live-data operations are explicitly excluded.
+- [ ] Codex must verify and record Gate 1 and Gate 2 evidence before the first application/Firebase change.
 
-Until that separate authorization is recorded, the implementation agent must remain read-only.
+If Gate 1 or Gate 2 fails, stop at first failure and report; do not edit or guess.
 
-### GATE 4 — Authorized implementation (future only)
+### GATE 4 — Authorized staging/test implementation
 
-Only after explicit execution authorization:
+The PO has granted bounded authorization, effective for code/configuration edits only after Gate 1 and Gate 2 are completed and evidenced. Then:
 1. Make the smallest approved code changes on a dedicated branch; never edit the locked baseline directly.
 2. Implement server-authoritative, tenant-scoped, idempotent billing and immutable ledger behavior.
 3. Implement Option A and status-precedence rules without bypassing revocation/suspension.
@@ -95,13 +95,13 @@ Only after explicit execution authorization:
 
 ## 5. Current blockers
 
-- Execution authorization has not been granted.
-- Official application-source READ-FIRST / forensic evidence has not been collected as part of this execution-gate plan.
-- Technical architecture, exact file list, and migration impact must be established from the official application repository; they must not be guessed from this Governance repository.
-- TC-BAL-04 and the other planned cases have not been executed.
+- Gate 1 evidence and Gate 2 design must be explicitly recorded by Codex before any application/Firebase edits; the prior forensic summary alone is not a substitute for source-grounded evidence.
+- Technical architecture, exact file list, migration impact, and existing wallet/ledger/top-up capabilities must be established from the official application repository.
+- TC-BAL-04 and the other planned cases remain `NOT RUN` until actually executed with evidence.
+- Production remains outside the authorization.
 
 ## 6. Current verdict
 
-`CR APPROVED` / `EXECUTION GATE PREPARATION` / `APPLICATION AND FIREBASE CHANGES NOT AUTHORIZED`.
+`CR APPROVED` / `PO EXECUTION AUTHORIZATION RECORDED — STAGING/TEST ONLY` / `GATE 1 AND GATE 2 REQUIRED BEFORE FIRST EDIT` / `PRODUCTION NOT AUTHORIZED`.
 
-Next permitted activity: read-only READ-FIRST / forensic and technical-design preparation. No application edits, Firebase edits, deployment, or production operations are authorized by this plan.
+Next permitted activity: Codex performs source-grounded Gate 1 verification and Gate 2 technical design, then proceeds with the smallest approved implementation on a dedicated branch only if both gates pass. No production operations are authorized.
