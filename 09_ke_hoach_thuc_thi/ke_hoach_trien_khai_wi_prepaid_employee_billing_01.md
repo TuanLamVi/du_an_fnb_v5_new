@@ -105,3 +105,34 @@ The PO has granted bounded authorization, effective for code/configuration edits
 `CR APPROVED` / `PO EXECUTION AUTHORIZATION RECORDED — STAGING/TEST ONLY` / `GATE 1 AND GATE 2 REQUIRED BEFORE FIRST EDIT` / `PRODUCTION NOT AUTHORIZED`.
 
 Next permitted activity: Codex performs source-grounded Gate 1 verification and Gate 2 technical design, then proceeds with the smallest approved implementation on a dedicated branch only if both gates pass. No production operations are authorized.
+
+
+---
+
+## 7. ADDENDUM — PO BUSINESS POLICY DECISION FOR SAME-DAY NEW DEVICE ACTIVATION (2026-10-10)
+
+- **Decision record:** [DECISION_PREPAID_BILLING_LATE_DEVICE_ACTIVATION_POLICY.md](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/14_rui_ro_loi_thay_doi_quyet_dinh/DECISION_PREPAID_BILLING_LATE_DEVICE_ACTIVATION_POLICY.md)
+- **Business policy status:** `PO_APPROVED` for the policy described in the linked decision record.
+- **CR revision/addendum for expanded implementation scope:** `DRAFT / PENDING PO CR APPROVAL`.
+- **Execution authorization for expanded scope:** `NOT GRANTED UNTIL CR REVISION AND REQUIRED GATES ARE APPROVED/VERIFIED`.
+- **Production:** `NOT AUTHORIZED`.
+- **Work Item status:** `BLOCKED — DO NOT MERGE` while the expanded CR, security evidence, concurrency design, and acceptance tests remain incomplete.
+
+### Approved business behavior
+
+For an eligible staff-device connection added after the 00:00 Asia/Ho_Chi_Minh billing boundary, the server must collect an additional 3,000 VND for the current Vietnam billing day before activating that connection. If the wallet cannot cover the incremental fee, no partial amount is deducted; only the new connection remains non-active/pending, while previously paid active connections remain active. Each charge must be idempotent per store, Vietnam billing date, and connection identity. The base daily billing flow and incremental activation flow must coordinate so a connection is never omitted or charged twice. The existing owner/server-device exclusion remains in force.
+
+### Required acceptance scenarios for the CR revision
+
+Add and keep the following cases `NOT RUN` until execution evidence is recorded:
+
+- `TC-LATE-DEVICE-15`: Successful same-day incremental charge and activation after the base daily fee has been collected.
+- `TC-LATE-DEVICE-16`: Insufficient wallet balance leaves the new connection pending without disabling previously paid active connections.
+- `TC-LATE-DEVICE-17`: Concurrent/repeated activation for the same connection/date cannot double-charge.
+- `TC-LATE-DEVICE-18`: Connection arrives while base daily billing is pending or recovering; retries preserve consistency without omission, unpaid activation, or duplicate charge.
+- `TC-LATE-DEVICE-19`: `pending`, `revoked`, `suspended`, and `rejected` states remain protected from unintended charge/activation.
+- `TC-LATE-DEVICE-20`: The following day's normal daily fee includes an eligible activated connection according to the established billing policy.
+
+### Governance and execution boundary
+
+This addendum records the PO's business-policy choice only. It does not rewrite the historical status of the original CR or original bounded authorization. The newly expanded same-day incremental-fee behavior requires a CR revision/addendum and updated acceptance contract. No application source, Firebase Rules, configuration, deployment, or production data operation for the expanded behavior may proceed until the CR revision is approved and the mandatory Gate 1/Gate 2 prerequisites are evidenced. Do not mark any test `PASS` without actual execution logs. Do not mark the Work Item `PO_VERIFIED / PROTECTED / LOCKED` before PO acceptance.
