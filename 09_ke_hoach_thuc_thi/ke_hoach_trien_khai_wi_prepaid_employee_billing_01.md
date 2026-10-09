@@ -19,7 +19,7 @@ The PO has now separately authorized the bounded staging/test implementation sco
 ## 2. Official target and repository boundary
 
 - Governance repository: `TuanLamVi/du_an_fnb_v5_new`, branch `main`.
-- Application repository for any future separately authorized work: `TuanLamVi/fnb-smart-v5`.
+- Official application repository for this PO-authorized, gated staging/test work: `TuanLamVi/fnb-smart-v5`.
 - Do not put Governance records into the application repository.
 - Do not modify the locked F&B SMART V5.1 baseline or use legacy repositories as a substitute for the official source.
 - Before any implementation, perform READ-FIRST against the official application source and its current documentation; record the exact branch, HEAD, worktree state, applicable contracts, and protected files. If the official source or required documents cannot be read, mark `UNPROVEN / BLOCKED` and stop.
