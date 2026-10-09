@@ -155,3 +155,19 @@ This addendum records the PO's business-policy choice and change-control approva
 - CR approval does not grant execution authorization for the expanded scope.
 - Before edits, complete and evidence Gate 1 and Gate 2 specifically for the incremental same-day charge/activation behavior. The six cases TC-LATE-DEVICE-15 through TC-LATE-DEVICE-20 remain `NOT RUN` until executed with evidence.
 - Current verdict remains `BLOCKED — DO NOT MERGE`; expanded-scope execution authorization is not granted; production remains `NOT AUTHORIZED`.
+
+
+## 10. PO EXECUTION AUTHORIZATION — FOLLOW-UP (2026-10-10)
+
+This dated follow-up supersedes prior statements that expanded-scope execution authorization had not yet been granted. It does **not** retroactively mark Gate 1/Gate 2 or any test as PASS, and does not rewrite the historical parent-CR decision.
+
+- **CR Addendum:** `PO APPROVED` — `CR-PREPAID-BILLING-01-ADD-01`.
+- **Bounded execution authorization:** `GRANTED BY PO — 2026-10-10`.
+- **Authorization record:** [DECISION_PREPAID_BILLING_ADDENDUM_EXECUTION_AUTHORIZATION.md](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/14_rui_ro_va_quyet_dinh/DECISION_PREPAID_BILLING_ADDENDUM_EXECUTION_AUTHORIZATION.md).
+- **Scope:** source changes on `feature/wi-prepaid-employee-billing-01`; directly related member/device security fixes; isolated emulator/local tests only. Staging can be used only after confirming it is isolated from production and cannot incur real charges.
+- **Prohibited:** merge or direct change to `main`; production deployment; production Firestore Rules/schema/config changes; production data access/mutation; real-money deductions or transactions; destructive migrations; unrelated scope expansion.
+- **Source implementation started:** security rules, server callable for same-day incremental device activation, base daily billing exclusion for a connection already prepaid that day, a client repository and test harness have been committed to the feature branch.
+- **Testing:** Firebase Emulator tests are wired to GitHub Actions. No test result is PASS until an actual completed run shows logs and pass/fail counts. Flutter dependency resolution/analyzer/build must also be checked; if not runnable in this environment, record them as `NOT RUN`.
+- **Current gate status:** Gate 1 findings identified; exact local Git raw output unavailable in the refinement environment; source was read from the verified GitHub feature branch. The owner self-escalation rule was found and a source change was applied, but security Emulator verification is still required.
+- **Current implementation status:** `IN PROGRESS — FEATURE BRANCH ONLY`; not PO-verified; not protected/locked; not ready to merge.
+- **Current verdict:** `IMPLEMENTATION AUTHORIZED WITH BOUNDARIES; TESTS PENDING; NO MERGE / NO PRODUCTION`.
