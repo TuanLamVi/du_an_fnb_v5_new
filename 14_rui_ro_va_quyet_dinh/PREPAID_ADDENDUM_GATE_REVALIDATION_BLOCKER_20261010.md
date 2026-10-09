@@ -76,3 +76,16 @@ The current feature commit still contains the nested store-member rule allowing 
 Therefore the new report does not clear the existing blocker. Forensic activity may have produced findings, but the submitted evidence is not sufficient to mark Gate 1 PASS; Gate 2 remains too summary-level to independently verify. All affected Emulator/security tests remain `NOT RUN`.
 
 **Follow-up verdict:** `BLOCKED — FIRST FAILURE`. No expanded-scope execution authorization. No source/configuration edits, merge, deployment, live data, or real-money operations are authorized.
+
+
+## 7. Third Codex report rechecked (2026-10-10)
+
+Independent recheck against the GitHub API and current feature-branch files finds that the new report still does not clear the blockers:
+
+1. **Reported SHA remains invalid.** The report gives `2c2ee265f61763198083884b25fb4707e034e32d`; GitHub returns 422 “No commit found”. The actual feature branch head remains `2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b`. App `main` remains `2b661f0167a4850bbcf61d25a591074a4869b486`. The stated explanation that it is a feature-branch commit does not explain the invalid SHA; branches do not change the commit ID.
+2. **The owner self-escalation grant remains in source.** At the actual feature head, `firestore.rules` still has `allow create` under `match /stores/{storeId}/members/{uid}` with `(request.auth.uid == uid && request.resource.data.role == 'role_owner')` at lines 124–128. The wildcard rule's stricter terms cannot cancel this grant. Firebase's documented matching behavior permits access if any matching `allow` condition is true ([official Firebase documentation](https://firebase.google.com/docs/rules/rules-behavior)).
+3. **A security fix is described, not applied or tested.** The report says it has “designed” a fix; it supplies no changed commit, diff or emulator output. The feature branch's current Rules blob remains `b470563cd6751064e6ddb30b6d4ec73277b9fe83`.
+4. **Test-count statement needs reconciliation.** The source file `test/wi_prepaid_billing_phase2_test.dart` at the reviewed feature commit has 20 `test(...)` declarations. No additional actual test declaration was found there for the six addendum cases or the three member-security cases. This does not establish that other test files cannot exist, but the report's “25 original test cases” is unsupported by this source file. All tests reported as unrun must remain `NOT RUN`.
+5. **Gate verdict remains blocked.** The report does not provide raw shell output, changed source, or emulator execution evidence. Gate 1 cannot be accepted as PASS while the current source contains the apparent owner self-escalation grant and repo HEAD evidence remains inconsistent. Gate 2 is still only a summary-level description, not a reviewable source-grounded transaction/concurrency design.
+
+**Current state:** PO approval of CR Addendum is retained; expanded-scope execution authorization is not granted; no application/Firebase edits, emulator changes, merge, deployment, live data or real-money activity is authorized. Verdict: `BLOCKED — FIRST FAILURE`.
