@@ -116,7 +116,7 @@ Next permitted activity: Codex performs source-grounded Gate 1 verification and 
 - **CR revision/addendum for expanded implementation scope:** `PO APPROVED — 2026-10-10`, see `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`.
 - **Execution authorization for expanded scope:** `NOT GRANTED`; required Gate 1/Gate 2 evidence and separate scope authorization remain prerequisites.
 - **Production:** `NOT AUTHORIZED`.
-- **Work Item status:** `BLOCKED — DO NOT MERGE` while the expanded CR, security evidence, concurrency design, and acceptance tests remain incomplete.
+- **Work Item status:** `BLOCKED — DO NOT MERGE` because expanded-scope Gate 1/Gate 2 evidence, separate execution authorization, security/concurrency verification, and acceptance test execution remain incomplete. The CR addendum itself is PO-approved.
 
 ### Approved business behavior
 
