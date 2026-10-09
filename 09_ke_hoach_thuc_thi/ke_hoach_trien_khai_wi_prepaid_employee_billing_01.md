@@ -171,3 +171,21 @@ This dated follow-up supersedes prior statements that expanded-scope execution a
 - **Current gate status:** Gate 1 findings identified; exact local Git raw output unavailable in the refinement environment; source was read from the verified GitHub feature branch. The owner self-escalation rule was found and a source change was applied, but security Emulator verification is still required.
 - **Current implementation status:** `IN PROGRESS — FEATURE BRANCH ONLY`; not PO-verified; not protected/locked; not ready to merge.
 - **Current verdict:** `IMPLEMENTATION AUTHORIZED WITH BOUNDARIES; TESTS PENDING; NO MERGE / NO PRODUCTION`.
+
+## 11. EXECUTION AND ISOLATED CI CLOSEOUT UPDATE (2026-10-10)
+
+This newest dated section records the completed isolated feature-branch verification. It supersedes the earlier “TESTS PENDING” state in Section 10, but it does not mark final PO acceptance and does not authorize merge or production.
+
+- **Verified application feature HEAD:** `1148d34ac31a0fc232abe15a3d605950f10d5afd` — [commit](https://github.com/TuanLamVi/fnb-smart-v5/commit/1148d34ac31a0fc232abe15a3d605950f10d5afd).
+- **Verified application main HEAD:** `2b661f0167a4850bbcf61d25a591074a4869b486` — unchanged by this execution.
+- **CI run:** [GitHub Actions 37975267702 — SUCCESS](https://github.com/TuanLamVi/fnb-smart-v5/actions/runs/37975267702).
+- **Evidence report:** [PREPAID_ADDENDUM_IMPLEMENTATION_TEST_REPORT_20261010.md](https://github.com/TuanLamVi/du_an_fnb_v5_new/blob/main/14_rui_ro_va_quyet_dinh/PREPAID_ADDENDUM_IMPLEMENTATION_TEST_REPORT_20261010.md).
+- **Flutter model/simulation suite:** 20/20 passed. These are explicitly model/simulation tests, not Emulator integration tests.
+- **Firestore Rules Emulator suite:** 17/17 passed, 0 failed.
+- **Prepaid billing Functions/Firestore Emulator integration suite:** `TC-LATE-DEVICE-15` through `TC-LATE-DEVICE-20`, 6/6 passed, 0 failed.
+- **Cloud Functions JavaScript syntax check:** PASS.
+- **Scoped Flutter analyze:** PASS under `--no-fatal-infos`; two informational lint findings remain non-fatal and are recorded in the CI run.
+- **Current Draft PR:** [PR #1](https://github.com/TuanLamVi/fnb-smart-v5/pull/1) remains `OPEN / DRAFT / NOT MERGED`.
+- **Current status:** `FEATURE BRANCH IMPLEMENTATION PRESENT / TARGETED CI + EMULATOR TESTS PASS / PENDING PO REVIEW`.
+- **Not permitted:** merge into `main`, production deployment, production Firebase changes, live-data operations or real-money transactions.
+- **Closeout:** do not mark `PO_VERIFIED`, `PROTECTED`, or `LOCKED` until Tuấn reviews the linked evidence and explicitly accepts the Work Item.
