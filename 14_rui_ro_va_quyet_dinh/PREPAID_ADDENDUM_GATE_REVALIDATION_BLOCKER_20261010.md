@@ -108,3 +108,16 @@ Independent GitHub verification finds that this report still does not resolve th
 6. **Tests remain unexecuted.** The 20 baseline tests in `test/wi_prepaid_billing_phase2_test.dart` have previously been inspected as model/simulation tests; the report says all tests remain `NOT RUN`. No emulator output or execution evidence was supplied.
 
 **Current verdict:** `BLOCKED — FIRST FAILURE`. PO approval of the CR Addendum remains valid; separate expanded-scope execution authorization is not granted. No source/Rules/configuration edits, emulator mutations, merge, deployment, production data access or real-money activity are authorized.
+
+
+## 9. Fifth Codex report rechecked (2026-10-10)
+
+A fresh source check against the current GitHub feature branch again fails to validate the reported verdict:
+
+1. **HEAD is still not verified as claimed.** GitHub branch API reports feature head `2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b`, while the report supplies `2c2ee265f61763198083884b25fb4707e034e32d`. The supplied SHA does not resolve through GitHub (HTTP 422). The report contains no raw terminal output, and explicitly says the SHA was mapped from metadata instead of obtained by running Git commands.
+2. **The member owner-escalation rule is demonstrably unchanged.** The live feature-branch source at `firestore.rules` blob `b470563cd6751064e6ddb30b6d4ec73277b9fe83` still contains `(request.auth.uid == uid && request.resource.data.role == 'role_owner')` in `match /stores/{storeId}/members/{uid}` (lines 124–128). The wildcard rule at lines 361–377 does not revoke that grant; overlapping Firestore `allow` conditions are additive/ORed.
+3. **Owner bootstrap evidence is not sufficient.** The report states that Cloud Functions/server-authoritative logic is used but gives no function name, source path or actual call chain demonstrating that client-side owner self-creation is denied. The mere existence of a legitimate server bootstrap flow does not eliminate a separately permissive Rules condition.
+4. **Emulator readiness is not demonstrated.** `firebase.json` at the feature branch contains only the `firestore.rules` path and `functions` source; it has no explicit `emulators` configuration. This alone does not prove the Emulator cannot run, but the report supplies no command, dependency/configuration evidence or run output. The Flutter test `test/wi_prepaid_billing_phase2_test.dart` has 20 declarations and imports `flutter_test`; it is not proof of Firebase Emulator Rules testing. No Rules test file or executed Emulator output was provided.
+5. **Gate 2 remains summary-only.** No source-grounded transaction sequence, complete read/write set, idempotency record contract, concurrency handling or recovery proof was supplied.
+
+**Disposition:** The report's `GATE EVIDENCE VERIFIED — READY FOR SEPARATE EXECUTION-AUTHORIZATION REVIEW` verdict is rejected. Current state remains `BLOCKED — FIRST FAILURE`; Gate 1 is not PASS, Gate 2 is not independently proven, expanded-scope execution authorization is not granted, all unexecuted tests remain `NOT RUN`, and no source/configuration edits, merge, deployment, production data operations or real-money transactions are authorized.
