@@ -4,7 +4,7 @@
 - **Parent CR:** CR-PREPAID-BILLING-01
 - **Work Item:** WI-PREPAID-EMPLOYEE-BILLING-01
 - **Related PO decision:** DEC-PREPAID-BILLING-LATE-DEVICE-01
-- **Status:** `DRAFT / PENDING PO CR APPROVAL`
+- **Status:** `PO APPROVED — 2026-10-10 (EXPLICIT CHAT APPROVAL)`
 - **Execution authorization for this addendum:** `NOT GRANTED`
 - **Environment:** Emulator/staging only after approval and required Gate 1/Gate 2 evidence
 - **Production:** `NOT AUTHORIZED`
@@ -14,7 +14,7 @@
 
 This addendum extends the previously approved prepaid employee-device billing requirements to cover a staff-device connection first becoming eligible after the daily billing boundary at 00:00 Asia/Ho_Chi_Minh.
 
-The separate PO business-policy decision, `DEC-PREPAID-BILLING-LATE-DEVICE-01`, is approved. This CR addendum is a separate change-control artifact and remains pending explicit PO CR approval. The existing approval and authorization records for the parent CR must not be rewritten or treated as automatic approval of this expanded scope.
+The separate PO business-policy decision, `DEC-PREPAID-BILLING-LATE-DEVICE-01`, is approved. The PO explicitly approved this CR addendum on 2026-10-10 in the conversation. The approval is recorded in `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`. This CR approval does not grant execution authorization. The existing approval and authorization records for the parent CR must not be rewritten or treated as automatic approval of this expanded scope.
 
 ## 2. Problem statement / root cause
 
@@ -42,7 +42,7 @@ As recorded in `DEC-PREPAID-BILLING-LATE-DEVICE-01`:
 
 ## 4. Proposed scope of change
 
-Subject to PO CR approval and completion/evidence of the mandatory governance gates:
+With PO CR approval granted on 2026-10-10, and subject to completion/evidence of the mandatory governance gates:
 
 - Inspect and modify only the necessary server-authoritative connection-creation/approval/activation flow, daily billing logic, wallet/ledger transaction logic, and associated Firestore Rules.
 - Establish an idempotency key or equivalent immutable record for each incremental charge by store/date/connection.
@@ -83,8 +83,8 @@ Before any source/configuration edit for this addendum:
 - Complete and record source-grounded Gate 1 forensic evidence.
 - Complete and record Gate 2 technical design and acceptance contract, including concurrent base daily deduction, device removal, connection creation, incremental billing and retry semantics.
 - Resolve any conflict with the approved data architecture and security contracts.
-- Obtain explicit PO approval of this CR addendum.
-- Obtain/confirm execution authorization for this expanded scope; the existing parent CR authorization does not automatically authorize this incremental-charge scope.
+- PO approval of this CR addendum: completed on 2026-10-10 and recorded in `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`.
+- Obtain separate execution authorization for this expanded scope; the existing parent CR authorization does not automatically authorize this incremental-charge scope.
 
 If any prerequisite fails, stop at first failure and report evidence. No guessing, no production action.
 
@@ -97,10 +97,11 @@ Rollback must be designed before implementation. If an emulator/staging test fai
 ## 9. Approval record
 
 - PO policy decision: `APPROVED` via `DEC-PREPAID-BILLING-LATE-DEVICE-01`.
-- This CR addendum: `DRAFT / PENDING PO CR APPROVAL`.
+- This CR addendum: `PO APPROVED — 2026-10-10`; approval record: `DECISION_PREPAID_BILLING_ADDENDUM_APPROVAL.md`.
 - Expanded-scope execution authorization: `NOT GRANTED`.
-- Gate 1/Gate 2 evidence for this expanded scope: `PENDING VERIFICATION/RECORDING`.
+- Gate 1/Gate 2 evidence for this expanded scope: `PENDING VERIFICATION/RECORDING`; no source/configuration edit is permitted until required evidence and authorization are verified.
+- Tests: all original and addendum cases remain `NOT RUN` unless actual execution evidence is recorded.
 - Production: `NOT AUTHORIZED`.
 - Current verdict: `BLOCKED — DO NOT MERGE`.
 
-**Requested PO action:** Review and explicitly approve or reject `CR-PREPAID-BILLING-01-ADD-01`. Policy approval alone does not approve this CR addendum or grant execution authorization.
+**Next permitted activity:** Complete and record source-grounded Gate 1 and Gate 2 evidence for the approved addendum, then obtain/confirm separate execution authorization for the expanded scope before any source/configuration change.
