@@ -60,3 +60,19 @@ The 26 test cases being `NOT RUN` is correctly reported. A case list alone is no
 - Production, live data, real-money deductions, deployment and merge to `main`: `NOT AUTHORIZED`.
 
 **Current verdict:** `GATE 1 NOT PASS / GATE 2 NOT YET PROVEN — BLOCKED`.
+
+
+## 6. Follow-up on subsequent Codex report (2026-10-10)
+
+The subsequent report still claims local and remote-tracking HEAD `8ee0fa3d0dbe93e25b1285eb8035ed88647bb1f0`. Independent GitHub recheck again found:
+- `main`: `2b661f0167a4850bbcf61d25a591074a4869b486`.
+- `feature/wi-prepaid-employee-billing-01`: `2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b`.
+- The reported `8ee0fa3d0dbe93e25b1285eb8035ed88647bb1f0` still returns GitHub API 422 / “No commit found for SHA”.
+- `8ee0fa3e419124bae977dc002a0a7527fb441ec2` exists, but is a historical commit, not the current feature branch HEAD.
+- No pull request was returned by the repository pull-request collection at review time.
+
+The current feature commit still contains the nested store-member rule allowing self-creation of `role_owner` at [firestore.rules lines 120–137](https://github.com/TuanLamVi/fnb-smart-v5/blob/2c2ee26b5e02e5e4549f06579c1fa6ff88f6595b/firestore.rules#L120-L137). The report mentions only a proposed least-privilege fix; it does not state that the fix was implemented or verified by Emulator tests. Firebase documents that when multiple rules match a path, permission is granted if any matching `allow` condition is true ([official rule behavior](https://firebase.google.com/docs/rules/rules-behavior)).
+
+Therefore the new report does not clear the existing blocker. Forensic activity may have produced findings, but the submitted evidence is not sufficient to mark Gate 1 PASS; Gate 2 remains too summary-level to independently verify. All affected Emulator/security tests remain `NOT RUN`.
+
+**Follow-up verdict:** `BLOCKED — FIRST FAILURE`. No expanded-scope execution authorization. No source/configuration edits, merge, deployment, live data, or real-money operations are authorized.
