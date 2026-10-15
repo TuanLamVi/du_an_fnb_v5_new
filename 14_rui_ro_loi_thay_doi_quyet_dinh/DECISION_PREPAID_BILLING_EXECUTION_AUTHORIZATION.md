@@ -55,3 +55,15 @@ Tuấn explicitly approves implementation of WI-PREPAID-EMPLOYEE-BILLING-01 and 
 - Implementation/tests: not claimed complete; results must be reported from actual execution.
 
 This record documents the PO's authorization and scope. It is not evidence that Codex has started, that code has changed, or that any test/build/deployment has passed.
+
+## 6. Subsequent PO clarification — trial lifecycle (2026-10-15)
+
+The earlier item 8 above is retained as the wording in the 2026-10-09 authorization record. For current implementation and acceptance, it is **clarified/superseded** by `DEC-2026-TRIAL-LIFECYCLE-30D-NO-GRACE-01` and `CR-PREPAID-BILLING-02`:
+
+- Exploration before the 100th qualifying valid paid invoice is untimed; trial has not started.
+- The 100th qualifying valid paid invoice **starts** the trial; it does not end the trial.
+- The trial lasts exactly 30 days and has **no 3-day post-trial grace period**.
+- This clarification does not remove the independent low-wallet warning 3 days before projected insufficiency.
+- Existing Gate 1/Gate 2, staging/test-only limits, First Failure Stop, source evidence requirements, and Production prohibition remain in effect.
+
+Historical wording is preserved for audit; this appended clarification controls the current trial policy. No claim of application-source implementation or runtime acceptance is made by this note.

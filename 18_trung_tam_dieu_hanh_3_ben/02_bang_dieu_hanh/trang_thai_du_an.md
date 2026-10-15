@@ -12,3 +12,12 @@
   - Commit: `docs: dong bo bo ho so du an fnb smart v5.1`
   - Thời gian đồng bộ: 2026-06-29
   - Trạng thái xác minh: Đã kiểm tra và khớp 100% trên GitHub.
+
+## Cập nhật quyết định PO — Vòng đời dùng thử (2026-10-15)
+
+- **Decision:** `DEC-2026-TRIAL-LIFECYCLE-30D-NO-GRACE-01`; **CR:** `CR-PREPAID-BILLING-02`.
+- Trước hóa đơn hợp lệ đã thanh toán thứ 100: khám phá không giới hạn thời gian; chính sách dùng thử không giới hạn số lời mời nhân viên.
+- Tại hóa đơn đủ điều kiện thứ 100: bắt đầu trial đúng 30 ngày.
+- **Không có ân hạn 3 ngày sau khi trial hết hạn.**
+- Cảnh báo ví 3 ngày trước khi dự kiến thiếu tiền là chính sách riêng, vẫn giữ nguyên.
+- Đây là quyết định/hồ sơ nghiệp vụ đã phê duyệt; **tình trạng code và runtime chưa được xác minh bởi cập nhật tài liệu này**. Baseline V5.1 và giới hạn môi trường Production không thay đổi.

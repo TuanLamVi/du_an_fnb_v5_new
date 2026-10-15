@@ -33,7 +33,7 @@ The PO has now separately authorized the bounded staging/test implementation sco
 5. If the owner removes devices and the fee for the current day has not yet been collected, collect the exact total for the remaining devices only when the balance is sufficient, then enable those remaining devices through the end of that billing day.
 6. Do not charge twice for the same store and billing day. Do not automatically refund after a daily fee has already been collected.
 7. Recovery may clear `locked_insufficient_balance` only; it must preserve `revoked` and `suspended`.
-8. Trial ends after 100 commercial orders. Exclude the 5 test orders only when they occur in a server-controlled isolated test environment.
+8. **Trial lifecycle (clarified by PO DEC-2026-TRIAL-LIFECYCLE-30D-NO-GRACE-01, 2026-10-15):** the trial starts at the 100th qualifying valid, fully paid commercial invoice, excluding QA/test data under the server-controlled rule; before that, exploration is untimed and the trial policy does not cap invitations; once activated, trial duration is exactly 30 days with NO post-trial grace period.
 9. Low-wallet warning when the available balance covers no more than 3 days.
 10. Missed downtime days must not be charged retroactively without a trustworthy snapshot.
 11. Keep tenant isolation, idempotency, immutable ledger, one-time top-up code, anti-replay/rate limiting, and batch writes capped at 400 operations.
@@ -189,3 +189,21 @@ This newest dated section records the completed isolated feature-branch verifica
 - **Current status:** `FEATURE BRANCH IMPLEMENTATION PRESENT / TARGETED CI + EMULATOR TESTS PASS / PENDING PO REVIEW`.
 - **Not permitted:** merge into `main`, production deployment, production Firebase changes, live-data operations or real-money transactions.
 - **Closeout:** do not mark `PO_VERIFIED`, `PROTECTED`, or `LOCKED` until Tuấn reviews the linked evidence and explicitly accepts the Work Item.
+
+
+## 7. PO policy update — trial exploration, exact 30-day duration, no grace (2026-10-15)
+
+Canonical records:
+- `DEC-2026-TRIAL-LIFECYCLE-30D-NO-GRACE-01`: `14_rui_ro_loi_thay_doi_quyet_dinh/quyet_dinh_dung_thu_30_ngay_khong_an_han_20261015.md`
+- `CR-PREPAID-BILLING-02`: `13_quan_ly_thay_doi/cr_chinh_sach_vong_doi_dung_thu_20261015.md`
+
+Implementation requirements:
+1. Before the qualifying invoice threshold is reached, trial has not started; customers can stop and return later without consuming trial days.
+2. No trial-policy cap on employee invitations (including 10,000 as the PO's example); ordinary role/membership/device/security gates remain in force.
+3. The qualifying paid-invoice count and activation timestamp must be server-authoritative and idempotent.
+4. Exactly 30 days from activation; at expiry, no extra 3-day grace interval. Do not use a stale grace-period field, UI message, scheduled job or authorization path to grant extra free days.
+5. Dashboard behavior must match the new CR acceptance cases, including hiding the 100-invoice target/timer before activation and showing trial-ended plus a truthful wallet/connection-lock estimate after expiry.
+6. The three-day low-wallet advance warning remains a separate policy; it is not grace time.
+7. These are product acceptance criteria, not evidence of source implementation or runtime PASS. Reconcile the official application source and test the full lifecycle before asserting compliance.
+
+Do not edit the locked V5.1 baseline as part of this change. Production remains forbidden.
